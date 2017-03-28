@@ -47,7 +47,7 @@
       };
 
       vm.logout = function() {
-        $http.post('https://jenkins-pet-server.pcf-apps.intware.com/signout  ', {}).finally(function() {
+        $http.post('api/signout  ', {}).finally(function() {
           $rootScope.authenticated = false;
           principalService.clearPrincipal();
           $location.path('/');

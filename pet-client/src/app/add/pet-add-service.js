@@ -14,7 +14,7 @@
 
     function add(name, description) {
       $log.info("Adding pet with name: ", name, " and description: ", description);
-      var url = "https://jenkins-pet-server.pcf-apps.intware.com/pet";
+      var url = "api/pet";
       return $http.post(url, {"name": name, "description": description})
         .then(getId)
     }
