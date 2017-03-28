@@ -23,7 +23,7 @@
           + credentials.password)
       } : {};
 
-      return $http.get('/user', {
+      return $http.get('https://jenkins-pet-server.pcf-apps.intware.com/user', {
         headers: headers
       }).success(function (data) {
         principalService.setPrincipal(data.principal);

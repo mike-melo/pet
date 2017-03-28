@@ -17,7 +17,7 @@
 
     function search(petId) {
       $log.info("Searching for pet with id: ", petId);
-      var url = "/pet" + "/" + petId;
+      var url = "https://jenkins-pet-server.pcf-apps.intware.com/pet" + "/" + petId;
       return $http.get(url)
                   .then(getPet)
     }

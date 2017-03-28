@@ -16,7 +16,7 @@
 
     function deletePet(petId) {
       $log.info("Deleting pet id: ", petId);
-      var url = "/pet" + "/" + petId;
+      var url = "https://jenkins-pet-server.pcf-apps.intware.com/pet" + "/" + petId;
       $http.delete(url)
         .then(function () {
             $modalInstance.close(true);
