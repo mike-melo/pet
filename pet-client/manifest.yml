@@ -4,5 +4,5 @@ applications:
   memory: 1024M
   instances: 1
   host: jenkins-pet-client
-  buildpack: nodejs_buildpack
+  buildpack: staticfile_buildpack
   path: dist
