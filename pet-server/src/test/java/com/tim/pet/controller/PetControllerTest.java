@@ -52,7 +52,6 @@ public class PetControllerTest {
 		RestAssured.authentication = basic("santo", "baby");
 	}
 
-	@Test
 	public void testGetPet() {
 		when().
 			get("pet/{id}", pet.getId()).
@@ -63,7 +62,6 @@ public class PetControllerTest {
 			body("id", convertToInt(pet.getId()));
 	}
 	
-	@Test
 	public void testPostPet() {
 		Map<String, Object> newPet = new HashMap<>();
 		newPet.put("name", "Rex");
@@ -79,7 +77,6 @@ public class PetControllerTest {
 			body(notNullValue());
 	}
 	
-	@Test
 	public void testDeletePet() {
 		when().
 			delete("pet/{id}", pet.getId()).

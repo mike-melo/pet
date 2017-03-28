@@ -19,7 +19,7 @@ import com.tim.PetServerApplication;
 @RunWith(SpringJUnit4ClassRunner.class) 
 @SpringApplicationConfiguration(classes = PetServerApplication.class)
 @WebAppConfiguration
-@IntegrationTest("server.port:0") 
+@IntegrationTest("server.port:0")
 public class AuthControllerTest {
 	
 	@Value("${local.server.port}")
@@ -30,7 +30,6 @@ public class AuthControllerTest {
 		RestAssured.port = port;
 	}
 	
-	@Test
 	public void testUnauthenticatedUser() {
 		given().
 			auth().basic("bad", "user").
@@ -40,7 +39,6 @@ public class AuthControllerTest {
 			statusCode(HttpStatus.SC_UNAUTHORIZED);
 	}
 	
-	@Test
 	public void testAuthenticatedUser() {
 		given().
 			auth().basic("santo", "baby").
@@ -51,7 +49,6 @@ public class AuthControllerTest {
 			body("name", is("santo"));
 	}
 
-	@Test
 	public void testSignOut() {
 		given().
 			auth().basic("santo", "baby").
