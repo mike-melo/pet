@@ -1,0 +1,7 @@
+---
+applications:
+- name: jenkins-pet
+  memory: 1024M
+  instances: 1
+  host: jenkins-pet
+  path: dist
