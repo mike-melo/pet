@@ -1,7 +1,7 @@
 ---
 applications:
-- name: jenkins-pet
+- name: jenkins-pet-server
   memory: 1024M 
   instances: 1
-  host: jenkins-pet
+  host: jenkins-pet-server
   path: target/pet-server-0.0.1-SNAPSHOT.jar

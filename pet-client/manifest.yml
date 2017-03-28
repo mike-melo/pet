@@ -1,7 +1,7 @@
 ---
 applications:
-- name: jenkins-pet
+- name: jenkins-pet-client
   memory: 1024M
   instances: 1
-  host: jenkins-pet
+  host: jenkins-pet-client
   path: dist
