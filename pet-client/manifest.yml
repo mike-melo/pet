@@ -1,7 +1,7 @@
 ---
 applications:
 - name: jenkins-pet-client
-  memory: 1024M
+  memory: 128M
   instances: 1
   host: jenkins-pet-client
   buildpack: staticfile_buildpack
