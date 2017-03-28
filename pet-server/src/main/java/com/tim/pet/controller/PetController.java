@@ -5,11 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.tim.pet.controller.request.AddPetRequest;
 import com.tim.pet.dao.entity.Pet;
@@ -25,6 +21,7 @@ public class PetController {
 	private IPetService petService;
 	
 	@RequestMapping(path="/pet", method=RequestMethod.GET)
+	@CrossOrigin
 	@ResponseBody
 	public Iterable<Pet> getPets() {
 		Iterable<Pet> allPets = petService.getAllPets();
@@ -33,6 +30,7 @@ public class PetController {
 	}
 	
 	@RequestMapping(path="/pet/{id}", method=RequestMethod.GET)
+	@CrossOrigin
 	@ResponseBody
 	public Pet getPet(@PathVariable Long id) {
 		Pet pet = petService.getPet(id);
@@ -41,6 +39,7 @@ public class PetController {
 	}
 	
 	@RequestMapping(path="/pet", method=RequestMethod.POST)
+	@CrossOrigin
 	@ResponseBody
 	public Long addPet(@RequestBody AddPetRequest request) {
 		LOGGER.info("Creating pet with request: {}", request);
@@ -55,6 +54,7 @@ public class PetController {
 	}
 	
 	@RequestMapping(path="/pet/{id}", method=RequestMethod.DELETE)
+	@CrossOrigin
 	@ResponseBody
 	public void deletePet(@PathVariable Long id) {
 		LOGGER.info("Deleting pet with id: {}", id);
