@@ -20,7 +20,7 @@ public class PetController {
 	@Autowired
 	private IPetService petService;
 	
-	@RequestMapping(path="/pet", method=RequestMethod.GET)
+	@RequestMapping(path="/api/pet", method=RequestMethod.GET)
 	@CrossOrigin
 	@ResponseBody
 	public Iterable<Pet> getPets() {
@@ -29,7 +29,7 @@ public class PetController {
 		return allPets;
 	}
 	
-	@RequestMapping(path="/pet/{id}", method=RequestMethod.GET)
+	@RequestMapping(path="/api/pet/{id}", method=RequestMethod.GET)
 	@CrossOrigin
 	@ResponseBody
 	public Pet getPet(@PathVariable Long id) {
@@ -38,7 +38,7 @@ public class PetController {
 		return pet;
 	}
 	
-	@RequestMapping(path="/pet", method=RequestMethod.POST)
+	@RequestMapping(path="/api/pet", method=RequestMethod.POST)
 	@CrossOrigin
 	@ResponseBody
 	public Long addPet(@RequestBody AddPetRequest request) {
@@ -53,7 +53,7 @@ public class PetController {
 		return pet;
 	}
 	
-	@RequestMapping(path="/pet/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(path="/api/pet/{id}", method=RequestMethod.DELETE)
 	@CrossOrigin
 	@ResponseBody
 	public void deletePet(@PathVariable Long id) {

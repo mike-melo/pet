@@ -18,7 +18,7 @@ public class AuthController {
 	
 	public static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
-	@RequestMapping(path="/user", method=RequestMethod.GET)
+	@RequestMapping(path="/api/user", method=RequestMethod.GET)
 	@CrossOrigin
 	@ResponseBody
 	public Principal user(Principal user) {
@@ -26,7 +26,7 @@ public class AuthController {
 		return user;
 	}
 	
-	@RequestMapping(path="/signout", method=RequestMethod.POST)
+	@RequestMapping(path="/api/signout", method=RequestMethod.POST)
 	@CrossOrigin
 	@ResponseBody
 	public void signout() {
