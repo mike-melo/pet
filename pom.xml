@@ -26,13 +26,20 @@
         <version>3.0.2</version>
         <configuration>
           <archive>
+            <addMavenDescriptor>true</addMavenDescriptor>
+            <index>true</index>
             <manifest>
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
             </manifest>
             <manifestEntries>
-              <Specification-Title>${project.name}</Specification-Title>
-              <Specification-Version>${project.version}</Specification-Version>
-              <Implementation-Version>${build.number}</Implementation-Version>
+              <artifactId>${project.artifactId}</artifactId>
+              <groupId>${project.groupId}</groupId>
+              <version>${project.version}</version>
+              <revision>GITSHA</revision>
+              <build-number>${BUILD_NUMBER}</build-number>
+              <build-id>${BUILD_ID}</build-id>
+              <build-time>${maven.build.timestamp}</build-time>
             </manifestEntries>
           </archive>
         </configuration>
